@@ -30,6 +30,9 @@ class Ui_MainWindow(object):
         self.filePathEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.filePathEdit.setMinimumSize(QtCore.QSize(350, 40))
         self.filePathEdit.setMaximumSize(QtCore.QSize(350, 40))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.filePathEdit.setFont(font)
         self.filePathEdit.setReadOnly(True)
         self.filePathEdit.setObjectName("filePathEdit")
         self.horizontalLayout_3.addWidget(self.filePathEdit)
@@ -51,6 +54,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.resultText = QtWidgets.QTextBrowser(self.centralwidget)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.resultText.setFont(font)
         self.resultText.setObjectName("resultText")
         self.horizontalLayout.addWidget(self.resultText)
         self.verticalLayout = QtWidgets.QVBoxLayout()
@@ -66,23 +72,48 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem5)
-        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setMinimumSize(QtCore.QSize(100, 30))
-        self.comboBox.setMaximumSize(QtCore.QSize(100, 30))
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.horizontalLayout_2.addWidget(self.comboBox)
+        self.languageComboBox = QtWidgets.QComboBox(self.centralwidget)
+        self.languageComboBox.setMinimumSize(QtCore.QSize(100, 30))
+        self.languageComboBox.setMaximumSize(QtCore.QSize(100, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.languageComboBox.setFont(font)
+        self.languageComboBox.setObjectName("languageComboBox")
+        self.languageComboBox.addItem("")
+        self.languageComboBox.addItem("")
+        self.languageComboBox.addItem("")
+        self.languageComboBox.addItem("")
+        self.languageComboBox.addItem("")
+        self.languageComboBox.addItem("")
+        self.languageComboBox.addItem("")
+        self.languageComboBox.addItem("")
+        self.languageComboBox.addItem("")
+        self.horizontalLayout_2.addWidget(self.languageComboBox)
         spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem6)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.limitLabel = QtWidgets.QLabel(self.centralwidget)
+        self.limitLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.limitLabel.setObjectName("limitLabel")
+        self.verticalLayout.addWidget(self.limitLabel)
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem7)
+        self.limitSpinBox = QtWidgets.QSpinBox(self.centralwidget)
+        self.limitSpinBox.setMinimumSize(QtCore.QSize(50, 25))
+        self.limitSpinBox.setMaximumSize(QtCore.QSize(50, 25))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.limitSpinBox.setFont(font)
+        self.limitSpinBox.setAlignment(QtCore.Qt.AlignCenter)
+        self.limitSpinBox.setMinimum(1)
+        self.limitSpinBox.setProperty("value", 50)
+        self.limitSpinBox.setObjectName("limitSpinBox")
+        self.horizontalLayout_4.addWidget(self.limitSpinBox)
+        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_4.addItem(spacerItem8)
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.changeNameButton = QtWidgets.QPushButton(self.centralwidget)
         self.changeNameButton.setEnabled(False)
         self.changeNameButton.setMinimumSize(QtCore.QSize(150, 40))
@@ -95,8 +126,8 @@ class Ui_MainWindow(object):
         self.startButton.setMaximumSize(QtCore.QSize(150, 40))
         self.startButton.setObjectName("startButton")
         self.verticalLayout.addWidget(self.startButton)
-        spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout.addItem(spacerItem7)
+        spacerItem9 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout.addItem(spacerItem9)
         self.horizontalLayout.addLayout(self.verticalLayout)
         self.horizontalLayout.setStretch(0, 10)
         self.horizontalLayout.setStretch(1, 1)
@@ -107,7 +138,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setStretch(3, 20)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 23))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -115,6 +146,9 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.chooseFileButton.clicked.connect(MainWindow.getExistingDirectory)
+        self.changeNameButton.clicked.connect(MainWindow.changeFilesName)
+        self.startButton.clicked.connect(MainWindow.startRunSIM)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -125,28 +159,30 @@ class Ui_MainWindow(object):
         self.resultText.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">本软件为SIM的GUI</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><a href=\"https://dickgrune.com/Programs/similarity_tester/\"><span style=\" font-family:\'-apple-system\'; font-size:16px; text-decoration: underline; color:#0366d6; background-color:#ffffff;\">SIM</span></a><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e; background-color:#ffffff;\">是Dick Grune开发的一款代码查重软件</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e; background-color:#ffffff;\">软件使用说明如下：</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e; background-color:#ffffff;\">1.把需要查重的代码放到同一个文件夹目录下。(只包含需要查重的代码文件，文件夹目录不包含中文)</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e; background-color:#ffffff;\">注：</span><a href=\"https://dickgrune.com/Programs/similarity_tester/\"><span style=\" font-family:\'-apple-system\'; text-decoration: underline; color:#0366d6; background-color:#ffffff;\">SIM</span></a><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e; background-color:#ffffff;\">只支持单语言，单文件查重。</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e; background-color:#ffffff;\">2.选择文件夹路径。</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e; background-color:#ffffff;\">3.软件不支持中文文件名，点击按钮即可自动把文件中的中文更改成对应拼音。</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e; background-color:#ffffff;\">4.点击进行查重</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'-apple-system\'; font-size:16px; color:#24292e;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'-apple-system\'; font-size:16px; color:#24292e;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'-apple-system\'; font-size:16px; color:#24292e;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; font-size:16px; color:#24292e;\">                                   Made by ZXF</span></p></body></html>"))
-        self.languageLabel.setText(_translate("MainWindow", "选择待查重程序语言："))
-        self.comboBox.setItemText(0, _translate("MainWindow", "C"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "C++"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "Java"))
-        self.comboBox.setItemText(3, _translate("MainWindow", "lisp"))
-        self.comboBox.setItemText(4, _translate("MainWindow", "m2"))
-        self.comboBox.setItemText(5, _translate("MainWindow", "mira"))
-        self.comboBox.setItemText(6, _translate("MainWindow", "pasc"))
-        self.comboBox.setItemText(7, _translate("MainWindow", "8086"))
-        self.comboBox.setItemText(8, _translate("MainWindow", "Text"))
+"</style></head><body style=\" font-family:\'SimSun\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">本软件为SIM的GUI程序。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">SIM是Dick Grune开发的一款代码查重软件</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">软件使用说明如下：</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">1.把需要查重的代码放到同一个文件夹目录下。(只包含需要查重的代码文件，文件夹目录不包含中文)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">注：SIM只支持单语言，单文件查重。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">2.选择文件夹路径。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">3.软件不支持中文文件名，点击按钮即可自动把文件名中的中文字符更改成对应拼音(请保证更名之后不会出现同名文件！)。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">4.选择待查重代码的语言</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">5.点击进行查重</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">6.查重结果以文本文件的形式保存在所选择的目录下。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">sim_res.txt 保存大致结果，sim_res_all.txt 保存详细结果，程序界面只输出大致结果。</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'-apple-system\'; color:#24292e;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e;\">                                Made by ZXF</span></p></body></html>"))
+        self.languageLabel.setText(_translate("MainWindow", "选择待查重程序语言"))
+        self.languageComboBox.setItemText(0, _translate("MainWindow", "C"))
+        self.languageComboBox.setItemText(1, _translate("MainWindow", "C++"))
+        self.languageComboBox.setItemText(2, _translate("MainWindow", "Java"))
+        self.languageComboBox.setItemText(3, _translate("MainWindow", "lisp"))
+        self.languageComboBox.setItemText(4, _translate("MainWindow", "m2"))
+        self.languageComboBox.setItemText(5, _translate("MainWindow", "mira"))
+        self.languageComboBox.setItemText(6, _translate("MainWindow", "pasc"))
+        self.languageComboBox.setItemText(7, _translate("MainWindow", "8086"))
+        self.languageComboBox.setItemText(8, _translate("MainWindow", "Text"))
+        self.limitLabel.setText(_translate("MainWindow", "选择查重阙值"))
         self.changeNameButton.setText(_translate("MainWindow", "点击更改文件名"))
         self.startButton.setText(_translate("MainWindow", "点击查重"))

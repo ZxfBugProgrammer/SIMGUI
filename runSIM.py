@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-import subprocess
-
-import win32api
 
 
 def runSIM(mode, argv):

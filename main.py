@@ -37,12 +37,23 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
 
     def startRunSIM(self):
         mode = self.languageComboBox.currentText()
+        startTime = time.time()
+
         argv = '-p -t ' + self.limitSpinBox.text()
         argv = argv + ' -o ' + os.path.join(self.filePathEdit.text(), 'sim_res.txt')
         argv = argv + ' ' + os.path.join(self.filePathEdit.text(), '*.*')
-        print(argv)
-        res = runSIM.runSIM(mode, argv)
-        self.resultText.setText(res)
+        # print(argv)
+        runSIM.runSIM(mode, argv)
+
+        argv = '-o ' + os.path.join(self.filePathEdit.text(), 'sim_res_all.txt')
+        argv = argv + ' ' + os.path.join(self.filePathEdit.text(), '*.*')
+        runSIM.runSIM(mode, argv)
+
+        endTime = time.time()
+        self.resultText.setText('查重完成\n结果见sim_res.txt和sim_res_all.txt')
+        self.resultText.append("共耗时%.6fs" % (endTime - startTime))
+        self.startButton.setEnabled(False)
+        self.changeNameButton.setEnabled(False)
 
 
 if __name__ == '__main__':

@@ -138,7 +138,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setStretch(3, 20)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -170,9 +170,9 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">4.选择待查重代码的语言</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">5.点击进行查重</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">6.查重结果以文本文件的形式保存在所选择的目录下。</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">sim_res.txt 保存大致结果，sim_res_all.txt 保存详细结果，程序界面只输出大致结果。</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e; background-color:#ffffff;\">sim_res.txt 保存大致结果，sim_res_all.txt 保存详细结果</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'-apple-system\'; color:#24292e;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e;\">                                Made by ZXF</span></p></body></html>"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'-apple-system\'; color:#24292e;\">Made by ZXF</span></p></body></html>"))
         self.languageLabel.setText(_translate("MainWindow", "选择待查重程序语言"))
         self.languageComboBox.setItemText(0, _translate("MainWindow", "C"))
         self.languageComboBox.setItemText(1, _translate("MainWindow", "C++"))

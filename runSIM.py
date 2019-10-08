@@ -2,8 +2,8 @@
 import os
 
 
-def runSIM(mode, argv):
-    nowPath = os.getcwd()
+def runSIM(mode, exePath, argv):
+    nowPath = exePath
     nowPath = os.path.join(nowPath, 'SIM')
     fileName = 'sim_' + mode + '.exe'
     nowPath = os.path.join(nowPath, fileName)

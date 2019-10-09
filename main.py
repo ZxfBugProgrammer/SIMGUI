@@ -6,7 +6,7 @@ import UI
 import time
 import os
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QIcon
 
 
 class MainWindow(QMainWindow, UI.Ui_MainWindow):
@@ -17,6 +17,8 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
 
     def getExistingDirectory(self):
         fileDirectory = QFileDialog.getExistingDirectory(self, "选则文件夹", "/")
+        if not os.path.isdir(fileDirectory):
+            return
         self.filePathEdit.setText(fileDirectory)
         self.changeNameButton.setEnabled(True)
         self.startButton.setEnabled(False)
@@ -54,10 +56,12 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
         self.resultText.append("共耗时%.6fs" % (endTime - startTime))
         self.startButton.setEnabled(False)
         self.changeNameButton.setEnabled(False)
+        self.filePathEdit.setText('请选择文件路径')
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setWindowIcon(QIcon('icon.ico'))
     mainWindow = MainWindow()
     mainWindow.show()
     sys.exit(app.exec_())
